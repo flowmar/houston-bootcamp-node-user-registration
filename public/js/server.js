@@ -5,6 +5,7 @@
 import express from 'express';
 import path from 'path';
 import logger from 'morgan';
+import router from '../../routes/register';
 
 /**
  *  Express Set Up
@@ -29,3 +30,10 @@ app.set('port', process.env.PORT || 3003);
 app.listen(app.get('port'), function() {
   console.log('Server started on port ' + app.get('port') + '.');
 });
+
+// Render the index page when the '/' route is hit
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+app.use('/register', router);

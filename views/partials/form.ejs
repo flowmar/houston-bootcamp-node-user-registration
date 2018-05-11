@@ -1,0 +1,62 @@
+<div class="container-fluid">
+<h2 class="jumbotron text-center mt-3 p-3 border-border-default border z-depth-4 hoverable light-blue">Please fill out the form and click "Submit".</h2>
+
+<br>
+<br>
+<div class="card border border-light z-depth-5 hoverable cyan lighten-1">
+<form method="post" action="/register" class="px-3 py-4 ml-4 text-center">
+  <fieldset>
+    <legend class="font-weight-bold display-4 text-center">Personal Information:</legend>
+    <br>
+
+    <div class="row justify-content-center">
+    <label class="font-weight-bold" for="first-name" class="mr-2">First Name:
+    </label>
+    <input type="text" name="first-name" class="mx-2 rounded" placeholder=" Trent">
+
+
+    <label class="font-weight-bold" for="last-name" class="mr-2">Last Name:</label>
+    <input type="text" name="last-name" class="mx-2 rounded" placeholder=" Reznor">
+    </div>
+    <br>
+
+    <div class="row justify-content-center">  
+    <label class="font-weight-bold mr-2" for="email" >Email:
+      </label>
+      <input type="text" name="email" class="mx-2 rounded" placeholder=" email@example.com">
+        
+  
+        <label class="font-weight-bold" for="password" class="ml-2">Password:</label>
+        <input type="text" name="password" class="mx-2 rounded" placeholder=" **********">
+</div>
+<br>
+<div class="row justify-content-center">
+    <label class="font-weight-bold" for="gender" class="mx-2">Gender:</label>
+    <label for="male" class="ml-2">Male:</label>
+    <input type="radio" name="gender" value="male" id="male" class="mx-2">
+    <label for="female">Female: </label>
+    <input type="radio" name="gender" value="female" id="female" class="mx-2">
+    <label for="other">Other: </label>
+    <input type="radio" name="gender" value="other" id="other">
+    </div>
+    <br>
+
+<div class="row justify-content-center">
+    <label class="font-weight-bold mr-2" for="birthday">Birthday:</label>
+    <input type="text" name="birthday" placeholder=" MM/DD/YYYY" class="rounded">
+</div>
+   <br>
+    <label class="font-weight-bold mr-2" for="height">Height:</label>
+    <input type="text" name="height" placeholder=" ex.5&apos;2&quot;" class="rounded mr-2">
+    <label class="font-weight-bold" for="zip-code">Zip Code:</label>
+    <input type="text" name="zip-code" placeholder=" #####" class="rounded mr-2"> </fieldset>
+<br> <br>
+  <fieldset>
+  <legend class="font-weight-bold display-4">Preferences: </legend>
+  <label class="font-weight-bold mr-2" for="gender-preference">Gender Preference:</label>
+  <input type="text" name="gender-preference" class="rounded">
+      </fieldset>
+
+</form>
+</div>
+</div>

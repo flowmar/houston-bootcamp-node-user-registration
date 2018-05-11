@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>User Registration</title>
- 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha256-NJWeQ+bs82iAeoT5Ktmqbi3NXwxcHlfaVejzJI2dklU="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.1/css/mdb.min.css" integrity="sha256-Nv9Ljzw9hu/AbE4mEQ7PDv51HyB2UTEi+3BKwi8i3D0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
 </head>
 
-<body>
-  
+<body class="light-green">
+  <div class="container-fluid orange animated bounce">
+    <div class="jumbotron-fluid bg-dark mx-2 hoverable border border-light">
+      <div class="view zoom">
+        <p class="text-center font-weight-bold display-1 text-white animated slideInDown bounce p-3 z-depth-3 b">User Registration</p>
+      </div>
+    </div>
+  <% include ./partials/form.ejs %>
+    <hr>
 
- <div class="container">
- <div class="jumbotron"></div>
- </div>
+
+  </div>
+  <hr>
+  <% include ./partials/footer.ejs %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-FCiJD1Xk+2itXYf5YdFQrPURijNogcXySEApUqeRwHc="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha256-C8oQVJ33cKtnkARnmeWp6SDChkU+u7KvsNMFUzkkUzk="
+      crossorigin="anonymous"></script>
 </body>
+
 </html>
