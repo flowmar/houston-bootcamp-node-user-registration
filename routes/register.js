@@ -54,7 +54,7 @@ router.post('/register', function (req, res, next) {
 
   // Save the user's data to the database
   connection.query(
-    'INSERT INTO users (email,firstName,lastName,password,gender,birthDate,zipCode,height,genderPreference,agePreferenceMin,agePreferenceMax,race,religion) VALUES ?', userData,
+    'INSERT INTO users (`email`,`firstName`,`lastName`,`password`,`gender`,`birthDate`,`zipCode`,`height`,`genderPreference`,`agePreferenceMin`,`agePreferenceMax`,`race`,`religion`) VALUES ?', userData,
     function (err, result) {
       if (err) {
         res.send(err);

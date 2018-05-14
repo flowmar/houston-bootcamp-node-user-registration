@@ -7,12 +7,14 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import logger from 'morgan';
 import '../../routes/register';
+import '../../routes/uploadProfile';
 import connection from './sqlconfig';
 
 /**
  *  Express Set Up
  */
 const router = require('../../routes/register');
+const uploadProfile = require('../../routes/uploadProfile');
 // Create an instance of express
 const app = express();
 
@@ -55,4 +57,7 @@ connection.connect(function (err) {
   console.log('mySQL database connection successful!');
 });
 
+
+// Routing
 app.post('/register', router);
+app.post('/uploadProfile', uploadProfile);
