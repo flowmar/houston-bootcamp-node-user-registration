@@ -1,91 +1,117 @@
 <div class="container-fluid">
-  <h2 class="jumbotron text-center mt-3 p-3 border-border-default border z-depth-4 hoverable light-blue">Please fill out the form and click "Submit".</h2>
+
+  <!-- Instructions -->
+  <h2 class="jumbotron text-center mt-3 p-3 border-border-default border z-depth-4 hoverable light-blue">
+    Please fill out the form and click "Submit".</h2>
 
   <br>
   <br>
+
+  <!-- Form -->
   <div class="card border border-light z-depth-5 hoverable shadow-lg cyan lighten-1">
     <form method="post" action="/register" class="px-3 py-4 ml-4 text-center">
+
+      <!-- Personal Information -->
       <fieldset>
         <legend class="font-weight-bold display-4 text-center">Personal Information:</legend>
         <hr>
         <br>
 
         <div class="row justify-content-center">
-          <label class="font-weight-bold mr-2" for="first-name">First Name:
+          <label class="font-weight-bold mr-2" for="firstName">First Name:
           </label>
-          <input type="text" name="first-name" class="mx-2 rounded" placeholder=" Trent" data-validation="length" data-validation-length="min3" required>
-
-
-          <label class="font-weight-bold mr-2" for="last-name">Last Name:</label>
-          <input type="text" name="last-name" class="mx-2 rounded" placeholder=" Reznor" data-validation="length" data-validation-length="min3" required>
+          <input type="text" name="firstName" class="mx-2 rounded p-1" placeholder=" Trent" data-validation="length" data-validation-length="min3"
+            required>
+          <br>
+        </div>
+        <div class="row justify-content-center">
+          <label class="font-weight-bold mr-2" for="lastName">Last Name:</label>
+          <input type="text" name="lastName" class="mx-2 rounded p-1" placeholder=" Reznor" data-validation="length" data-validation-length="min3"
+            required>
         </div>
         <br>
 
         <div class="row justify-content-center">
-          <label class="font-weight-bold mr-2" for="email">Email:
+          <label class="font-weight-bold mr-2" for="email">Email Address:
           </label>
-          <input type="text" name="email" class="mx-2 rounded" placeholder=" email@example.com" data-validation="email" required>
-
-
+          <input type="text" name="email" class="rounded p-1" placeholder=" email@example.com" data-validation="email" required>
+          <br>
+        </div>
+        <br>
+        <div class="row justify-content-center">
           <label class="font-weight-bold ml-2" for="password">Password:</label>
-          <input type="text" name="password" class="mx-2 rounded" placeholder=" **********" required>
+          <input name="password" class="mx-2 rounded p-1" placeholder=" **********" data-validation="length" data-validation-length="min8"
+            required>
         </div>
         <br>
         <div class="row justify-content-center">
           <label class="font-weight-bold mx-2" for="gender">Gender:</label>
-          <select data-validation="required">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
+          <select data-validation="required" name="gender">
+            <option value="male" name="gender" required>Male</option>
+            <option value="female" name="gender">Female</option>
+            <option value="other" name="gender">Other</option>
           </select>
         </div>
         <br>
 
         <div class="row justify-content-center">
-          <label class="font-weight-bold mr-2" for="birthday">Birthday:</label>
-          <input type="text" name="birth-date" placeholder=" MM/DD/YYYY" class="rounded" id="birth-date">
+          <label class="font-weight-bold mr-2" for="birthDate">Birthday:</label>
+          <input type="text" name="birthDate" placeholder=" DD/MM/YYYY" class="rounded p-1" data-validation="date" data-validation-format="dd/mm/yyyy">
         </div>
+
         <br>
+
         <label class="font-weight-bold mr-2" for="height">Height:</label>
-        <input type="text" name="height" placeholder=" ex.5&apos;2&quot;" class="rounded mr-2" id="height">
+        <input type="text" name="height" placeholder=" ex.5&apos;2&quot;" class="rounded mr-2 p-1" id="height">
+
+        <br>
+
         <label class="font-weight-bold" for="zip-code">Zip Code:</label>
-        <input type="text" name="zip-code" placeholder=" #####" class="rounded mr-2" id="zip-code"> </fieldset>
-      <br>
-      <br>
-      <fieldset>
-        <legend class="font-weight-bold display-4">Preferences: </legend>
-        <hr>
-        <br>
-        <div class="justify-content-center">
-          <label class="font-weight-bold mr-2" for="gender-preference">Gender Preference:</label>
-          <select data-validation="required">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
+        <input type="text" name="zipCode" placeholder=" #####" class="rounded mr-2 p-1" id="zipCode" data-validation="length" data-validation-length="5">
 
-        </div>
+        <br>
         <br>
 
-        <div class="justify-content-center">
-          <label class="font-weight-bold mx-2" for="min-age-preference">Minimum Age Preference: </label>
-          <input type="text" name="min-age-preference" class="rounded" data-validation="number" data-validation-allowing="range[18;99]" required>
+        <!-- Preferences -->
+        <fieldset>
+          <legend class="font-weight-bold display-4">Preferences: </legend>
+          <hr>
+          <br>
 
-          <label class="font-weight-bold mx-2" for="max-age-preference">Max Age Preference:</label>
-          <input type="text" name="max-age-preference" class="rounded" data-validation="number" data-validation-allowing="range[18;99]" required>
-        </div>
+          <div class="justify-content-center">
+            <label class="font-weight-bold mr-2" for="genderPreference">Gender Preference:</label>
+            <select data-validation="required" name="genderPreference">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <br>
+
+          <div class="justify-content-center">
+            <label class="font-weight-bold mx-2" for="minAgePreference">Minimum Age Preference: </label>
+            <input type="text" name="minAgePreference" class="rounded p-1" data-validation="number" data-validation-allowing="range[18;99]"
+              placeholder=" (Between 18 and 99)" required>
+            <br>
+          </div>
+          <div class="justify-content-center">
+            <label class="font-weight-bold mx-2" for="maxAgePreference">Max Age Preference:</label>
+            <input type="text" name="maxAgePreference" class="rounded p-1" data-validation="number" data-validation-allowing="range[18;99]"
+              placeholder=" (Between 18  and 99)" required>
+          </div>
+          <br>
+
+          <div class="justify-content-center">
+            <label class="font-weight-bold mr-2" for="race">Race:</label>
+            <input type="text" name="race" class="rounded p-1" placeholder=" (optional)">
+            <br>
+            <label class="font-weight-bold mr-2" for="religion">Religion:</label>
+            <input type="text" name="religion" class="rounded p-1" placeholder=" (optional)">
+          </div>
+        </fieldset>
         <br>
-
-        <div class="justify-content-center">
-          <label class="font-weight-bold mr-2" for="Race">Race:</label>
-          <input type="text" name="Race" class="rounded" placeholder=" (optional)" id="race">
-
-          <label class="font-weight-bold mr-2" for="religion">Religion:</label>
-          <input type="text" name="religion" class="rounded" placeholder=" (optional)" id="religion">
-        </div>
-      </fieldset>
-      <br>
-      <input type="submit" name="submit" value="Submit" id="submit" class="btn btn-lg btn-success border border-dark shadow-lg">
+        <input type="submit" name="submit" value="Submit" id="submit" class="btn btn-lg btn-success border border-dark shadow-lg font-weight-bold">
     </form>
   </div>
 </div>
