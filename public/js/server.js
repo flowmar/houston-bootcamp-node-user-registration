@@ -48,7 +48,6 @@ app.get('/', function (req, res) {
   next();
 });
 
-// app.use('/path', (req, res, next) => {});
 
 // Log successful connection to the console
 connection.connect(function (err) {
