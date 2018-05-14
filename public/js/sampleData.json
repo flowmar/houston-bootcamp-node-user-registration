@@ -1,0 +1,15 @@
+{
+  "email": "person@example.com",
+  "firstName": "Leonardo",
+  "lastName": "DaVinci",
+  "password": "aaa123",
+  "gender": "male",
+  "birthDate": "03211988",
+  "zipCode": 77070,
+  "height": "60 inches",
+  "genderPreference": "female",
+  "agePreferenceMin": 25,
+  "agePreferenceMax": 99,
+  "race": "asian",
+  "religion": null
+}

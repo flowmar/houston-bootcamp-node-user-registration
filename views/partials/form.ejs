@@ -11,76 +11,81 @@
         <br>
 
         <div class="row justify-content-center">
-          <label class="font-weight-bold" for="first-name" class="mr-2">First Name:
+          <label class="font-weight-bold mr-2" for="first-name">First Name:
           </label>
-          <input type="text" name="first-name" class="mx-2 rounded" placeholder=" Trent">
+          <input type="text" name="first-name" class="mx-2 rounded" placeholder=" Trent" data-validation="length" data-validation-length="min3" required>
 
 
-          <label class="font-weight-bold" for="last-name" class="mr-2">Last Name:</label>
-          <input type="text" name="last-name" class="mx-2 rounded" placeholder=" Reznor">
+          <label class="font-weight-bold mr-2" for="last-name">Last Name:</label>
+          <input type="text" name="last-name" class="mx-2 rounded" placeholder=" Reznor" data-validation="length" data-validation-length="min3" required>
         </div>
         <br>
 
         <div class="row justify-content-center">
           <label class="font-weight-bold mr-2" for="email">Email:
           </label>
-          <input type="text" name="email" class="mx-2 rounded" placeholder=" email@example.com">
+          <input type="text" name="email" class="mx-2 rounded" placeholder=" email@example.com" data-validation="email" required>
 
 
-          <label class="font-weight-bold" for="password" class="ml-2">Password:</label>
-          <input type="text" name="password" class="mx-2 rounded" placeholder=" **********">
+          <label class="font-weight-bold ml-2" for="password">Password:</label>
+          <input type="text" name="password" class="mx-2 rounded" placeholder=" **********" required>
         </div>
         <br>
         <div class="row justify-content-center">
-          <label class="font-weight-bold" for="gender" class="mx-2">Gender:</label>
-          <label for="male" class="ml-2">Male:</label>
-          <input type="radio" name="gender" value="male" id="male" class="mx-2">
-          <label for="female">Female: </label>
-          <input type="radio" name="gender" value="female" id="female" class="mx-2">
-          <label for="other">Other: </label>
-          <input type="radio" name="gender" value="other" id="other">
+          <label class="font-weight-bold mx-2" for="gender">Gender:</label>
+          <select data-validation="required">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
         </div>
         <br>
 
         <div class="row justify-content-center">
           <label class="font-weight-bold mr-2" for="birthday">Birthday:</label>
-          <input type="text" name="birthday" placeholder=" MM/DD/YYYY" class="rounded">
+          <input type="text" name="birth-date" placeholder=" MM/DD/YYYY" class="rounded" id="birth-date">
         </div>
         <br>
         <label class="font-weight-bold mr-2" for="height">Height:</label>
-        <input type="text" name="height" placeholder=" ex.5&apos;2&quot;" class="rounded mr-2">
+        <input type="text" name="height" placeholder=" ex.5&apos;2&quot;" class="rounded mr-2" id="height">
         <label class="font-weight-bold" for="zip-code">Zip Code:</label>
-        <input type="text" name="zip-code" placeholder=" #####" class="rounded mr-2"> </fieldset>
-        <br><br>
+        <input type="text" name="zip-code" placeholder=" #####" class="rounded mr-2" id="zip-code"> </fieldset>
+      <br>
+      <br>
       <fieldset>
         <legend class="font-weight-bold display-4">Preferences: </legend>
         <hr>
         <br>
         <div class="justify-content-center">
           <label class="font-weight-bold mr-2" for="gender-preference">Gender Preference:</label>
-          <input type="text" name="gender-preference" class="rounded">
+          <select data-validation="required">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
         </div>
         <br>
 
         <div class="justify-content-center">
           <label class="font-weight-bold mx-2" for="min-age-preference">Minimum Age Preference: </label>
-          <input type="text" name="min-age-preference" class="rounded">
+          <input type="text" name="min-age-preference" class="rounded" data-validation="number" data-validation-allowing="range[18;99]" required>
 
           <label class="font-weight-bold mx-2" for="max-age-preference">Max Age Preference:</label>
-          <input type="text" name="max-age-preference" class="rounded">
+          <input type="text" name="max-age-preference" class="rounded" data-validation="number" data-validation-allowing="range[18;99]" required>
         </div>
         <br>
 
         <div class="justify-content-center">
-          <label class="font-weight-bold mr-2" for="Race">Race</label>
-          <input type="text" name="Race" class="rounded" placeholder=" optional">
+          <label class="font-weight-bold mr-2" for="Race">Race:</label>
+          <input type="text" name="Race" class="rounded" placeholder=" (optional)" id="race">
 
           <label class="font-weight-bold mr-2" for="religion">Religion:</label>
-          <input type="text" name="religion" class="rounded" placeholder=" optional">
+          <input type="text" name="religion" class="rounded" placeholder=" (optional)" id="religion">
         </div>
       </fieldset>
       <br>
-            <input type="submit" name="submit" value="Submit" class="btn btn-lg btn-success border border-dark shadow-lg">
+      <input type="submit" name="submit" value="Submit" id="submit" class="btn btn-lg btn-success border border-dark shadow-lg">
     </form>
   </div>
 </div>
