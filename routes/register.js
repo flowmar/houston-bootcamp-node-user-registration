@@ -48,13 +48,18 @@ router.post('/register', function (req, res, next) {
     userData[0]["password"] = hash;
     console.log(userData[0]);
   });
-  res.send("User created!");
   next();
 }, function (req, res) {
 
+  // const sql = "INSERT INTO users (email, firstName, lastName, password, gender, birthDate, zipCode, height, genderPreference, agePreferenceMin, agePreferenceMax, race, religion) VALUES ?";
+
+  // connection.query(sql, [userData[0]], function (err, result) {
+  // if (err) throw err;
+  // console.log("Number of records inserted")
+  // })
   // Save the user's data to the database
   connection.query(
-    'INSERT INTO users (`email`,`firstName`,`lastName`,`password`,`gender`,`birthDate`,`zipCode`,`height`,`genderPreference`,`agePreferenceMin`,`agePreferenceMax`,`race`,`religion`) VALUES ?', userData,
+    'INSERT INTO users (`email`,`firstName`,`lastName`,`password`,`gender`,`birthDate`,`zipCode`,`height`,`genderPreference`,`agePreferenceMin`,`agePreferenceMax`,`race`,`religion`) VALUES ?', (userData[0]),
     function (err, result) {
       if (err) {
         res.send(err);
@@ -63,6 +68,8 @@ router.post('/register', function (req, res, next) {
       }
     }
   );
+  connection.end();
+
 });
 
 module.exports = router;

@@ -47,7 +47,6 @@ app.listen(app.get('port'), function () {
 // Render the index page when the '/' route is hit
 app.get('/', function (req, res) {
   res.render('index');
-  next();
 });
 
 
