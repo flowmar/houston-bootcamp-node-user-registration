@@ -28,9 +28,11 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../../views'));
 
 // Use body-parser as middleware
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 app.use(bodyParser.json());
 
 // Serve static files from the 'Public" folder
@@ -49,13 +51,11 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-
 // Log successful connection to the console
 connection.connect(function (err) {
   if (err) throw err;
   console.log('mySQL database connection successful!');
 });
-
 
 // Routing
 app.post('/register', router);

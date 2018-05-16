@@ -14,62 +14,58 @@ let userData = [];
  */
 
 // Accept a post request
-router.post('/register', function (req, res, next) {
+router.post(
+  '/register',
+  function (req, res, next) {
+    // Set the response header
+    res.setHeader('Content-Type', 'application/json');
 
-  // Set the response header
-  res.setHeader('Content-Type', 'application/json');
+    // Place the request body into a variable
+    let jsonData = req.body;
 
-  // Place the request body into a variable
-  let jsonData = req.body;
+    // Push the user's information to an array
+    userData.push({
+      email: jsonData.email,
+      firstName: jsonData.firstName,
+      lastName: jsonData.lastName,
+      password: jsonData.password,
+      gender: jsonData.gender,
+      birthDate: jsonData.birthDate,
+      zipCode: jsonData.zipCode,
+      height: jsonData.height,
+      genderPreference: jsonData.genderPreference,
+      agePreferenceMin: jsonData.agePreferenceMin,
+      agePreferenceMax: jsonData.agePreferenceMax,
+      race: jsonData.race,
+      religion: jsonData.religion
+    });
+    next();
+  },
+  function (req, res, next) {
+    // Hash the user's password before storage
+    let password = userData[0].password;
 
-  // Push the user's information to an array
-  userData.push({
-    email: jsonData.email,
-    firstName: jsonData.firstName,
-    lastName: jsonData.lastName,
-    password: jsonData.password,
-    gender: jsonData.gender,
-    birthDate: jsonData.birthDate,
-    zipCode: jsonData.zipCode,
-    height: jsonData.height,
-    genderPreference: jsonData.genderPreference,
-    agePreferenceMin: jsonData.agePreferenceMin,
-    agePreferenceMax: jsonData.agePreferenceMax,
-    race: jsonData.race,
-    religion: jsonData.religion
-  });
-  next();
-}, function (req, res, next) {
-
-  // Hash the user's password before storage
-  let password = userData[0].password;
-
-  bcrypt.hash(password, 10, function (err, hash) {
-    userData[0]["password"] = hash;
-    console.log(userData[0]);
-  });
-  next();
-}, function (req, res) {
-
-  // const sql = "INSERT INTO users (email, firstName, lastName, password, gender, birthDate, zipCode, height, genderPreference, agePreferenceMin, agePreferenceMax, race, religion) VALUES ?";
-
-  // connection.query(sql, [userData[0]], function (err, result) {
-  // if (err) throw err;
-  // console.log("Number of records inserted")
-  // })
-  // Save the user's data to the database
-  connection.query(
-    'INSERT INTO users (`email`,`firstName`,`lastName`,`password`,`gender`,`birthDate`,`zipCode`,`height`,`genderPreference`,`agePreferenceMin`,`agePreferenceMax`,`race`,`religion`) VALUES ?', (userData[0]),
-    function (err, result) {
+    bcrypt.hash(password, 10, function (err, hash) {
+      userData[0]['password'] = hash;
+      console.log(userData[0]);
+    });
+    next();
+  },
+  function (req, res) {
+    // Insert the user into the database
+    connection.query('INSERT INTO users SET ?', userData[0], function (
+      err,
+      result
+    ) {
       if (err) {
+        s
         res.send(err);
       } else {
-        res.send('Success');
+        res.send(result);
+        connection.end();
       }
-    }
-  );
-  connection.end();
-
-});
+    });
+  }
+);
 
 module.exports = router;

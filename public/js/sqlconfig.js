@@ -7,8 +7,8 @@ const mysql = require('mysql');
 // mySQL connection configuration
 const connection = mysql.createConnection({
   host: '127.0.0.1',
-  user: 'flowmar',
-  password: 'flowwithme1',
+  user: '',
+  password: '',
   database: 'user_registration'
 });
 
