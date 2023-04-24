@@ -20,6 +20,6 @@
     "babel-register": "^6.26.0",
     "eslint": "^4.19.1",
     "morgan": "^1.9.0",
-    "nodemon": "^1.17.4"
+    "nodemon": "^2.0.22"
   }
 }
